@@ -5,6 +5,9 @@ using Models.ConexionDataBase;
 using Models.Filters;
 using MongoDB.Driver;
 using System;
+using System.Diagnostics;
+using System.Linq.Expressions;
+using System.Text;
 
 namespace Data.Repository
 {
@@ -56,8 +59,6 @@ namespace Data.Repository
             int? delivery = filters.DeliveryLocation;
             int? market = carMarket;
 
-
-
             if (collect.HasValue)
             {
                 filter.Add(builder.Eq(c => c.PickItUp, filters.CollectLocation));
@@ -72,9 +73,11 @@ namespace Data.Repository
             {
                 filter.Add(builder.Eq(c => c.Market, carMarket));
             }
-
+            
+            List<string> list = new();
 
             return filter;
         }
+
     }
 }

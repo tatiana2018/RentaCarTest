@@ -16,6 +16,7 @@ namespace Application.Services
         {
             try
             {
+             
                 string formattedLatitude = filters.Latitude.ToString("G", CultureInfo.InvariantCulture);
                 string formattedLongitude = filters.Longitude.ToString("G", CultureInfo.InvariantCulture);
 
